@@ -1,0 +1,35 @@
+# Python specific
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+*.env
+.vscode/
+
+# IDE specific
+.idea/
+*.swp
+*~
+
+# Logs
+logs/
+*.log
+
+# Models & Data (Large files, shouldn't be version controlled)
+models/
+datasets/
+# Keep .gitkeep files if you want to track the directories even if empty
+!models/.gitkeep
+!datasets/.gitkeep
+!logs/.gitkeep
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Other temporary files
+*.tmp
+*.bak

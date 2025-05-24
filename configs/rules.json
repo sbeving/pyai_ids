@@ -1,0 +1,55 @@
+[
+    {
+        "rule_id": "RULE001",
+        "name": "Potential ICMP Flood (High ICMP Count from Source)",
+        "description": "Detects if a source IP sends more than 10 ICMP packets within the analyzed window.",
+        "conditions": [
+            {"field": "protocol_name", "operator": "equals", "value": "ICMP"}
+        ],
+        "aggregation": {
+            "group_by": "src_ip",
+            "count_threshold": 10 
+        },
+        "severity": "Medium"
+    },
+    {
+        "rule_id": "RULE002",
+        "name": "Suspicious Outbound Connection to Known Bad Port",
+        "description": "Detects outbound TCP connections to common C2/malware ports (e.g., 6667, 6697 for IRC bots, 31337 for Back Orifice).",
+        "conditions": [
+            {"field": "protocol_name", "operator": "equals", "value": "TCP"},
+            {"field": "dst_port", "operator": "in", "value": [6667, 6697, 31337]},
+            {"field": "dst_ip", "operator": "not_starts_with", "value": "192.168."} 
+        ],
+        "severity": "High"
+    },
+    {
+        "rule_id": "RULE003",
+        "name": "Non-Standard HTTP Source Port",
+        "description": "Detects TCP traffic to destination port 80 where the source port is unusually low (<1024), which can indicate a non-standard client or misconfiguration.",
+        "conditions": [
+            {"field": "protocol_name", "operator": "equals", "value": "TCP"},
+            {"field": "dst_port", "operator": "equals", "value": 80},
+            {"field": "src_port", "operator": "less_than", "value": 1024}
+        ],
+        "severity": "Low"
+    },
+    {
+        "rule_id": "RULE004",
+        "name": "Blacklisted IP Communication (Source)",
+        "description": "Detects communication originating from a known blacklisted IP address.",
+        "conditions": [
+            {"field": "src_ip", "operator": "in_blacklist", "value": "ip"}
+        ],
+        "severity": "Critical"
+    },
+    {
+        "rule_id": "RULE005",
+        "name": "Blacklisted IP Communication (Destination)",
+        "description": "Detects communication to a known blacklisted IP address.",
+        "conditions": [
+            {"field": "dst_ip", "operator": "in_blacklist", "value": "ip"}
+        ],
+        "severity": "Critical"
+    }
+]

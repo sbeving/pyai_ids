@@ -1,0 +1,2 @@
+malicious.com
+bad-domain.net

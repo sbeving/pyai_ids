@@ -1,0 +1,9 @@
+{
+    "ip_feeds": [
+        "file://C:\\Users\\saleh\\pyai_ids\\configs\\dummy_ip_blacklist.txt"
+    ],
+    "domain_feeds": [
+        "file://C:\\Users\\saleh\\pyai_ids\\configs\\dummy_domain_blacklist.txt"
+    ],
+    "hash_feeds": []
+}
