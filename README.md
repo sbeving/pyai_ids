@@ -1,6 +1,6 @@
 # PyAI-IDS: Advanced Python-based Intrusion Detection System
 
-## 🌟 Project Overview
+## 🌟 Project Overview - VIBE CODED - 4FUN
 
 The contemporary digital landscape faces a relentless escalation in the sophistication, frequency, and dynamism of cyber threats. Traditional Intrusion Detection Systems (IDS), often reliant on signature-based detection, struggle to identify zero-day exploits and novel malware variants. This project proposes and implements a prototype of an **Advanced Python-based Intrusion Detection System (PyAI-IDS)**, designed to provide a more intelligent, adaptive, and trustworthy layer of cybersecurity.
 
